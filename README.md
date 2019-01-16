@@ -10,3 +10,9 @@
 * `npm run deploy`
   * Deploy to AWS
   * Note: must install aws-cli to create local credentials beforehand
+
+
+## Admin for local DynamoDB
+* Set environment variable
+  * MacOS: `export DYNAMO_ENDPOINT=http://localhost:8000`
+  * Windows: `set DYNAMO_ENDPOINT=http://localhost:8000`

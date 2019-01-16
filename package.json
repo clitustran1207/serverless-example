@@ -7,7 +7,8 @@
     "start": "sls offline start",
     "install-local-dynamodb": "sls dynamodb install",
     "migrate-local-dynamodb": "sls dynamodb start --migrate",
-    "deploy": "sls deploy"
+    "deploy": "sls deploy",
+    "start:dynamodb-admin": "dynamodb-admin"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "serverless-http": "^1.8.0"
   },
   "devDependencies": {
+    "dynamodb-admin": "^3.1.0",
     "serverless": "^1.36.1",
     "serverless-offline": "^4.0.0"
   }
