@@ -1,0 +1,21 @@
+{
+  "name": "serverless-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sls offline start",
+    "deploy": "sls deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "serverless-http": "^1.8.0"
+  },
+  "devDependencies": {
+    "serverless": "^1.36.1",
+    "serverless-offline": "^4.0.0"
+  }
+}
