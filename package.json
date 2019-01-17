@@ -6,7 +6,7 @@
   "scripts": {
     "seed": "sls dynamodb seed --seed=test",
     "start": "sls offline start --seed=test",
-    "dev": "nodemon --exec start:seed",
+    "dev": "nodemon --exec npm start",
     "install-local-dynamodb": "sls dynamodb install",
     "uninstall-local-dynamodb": "sls dynamodb remove",
     "migrate-local-dynamodb": "sls dynamodb start --migrate",

@@ -4,7 +4,8 @@ custom:
   dynamodb:
     start:
       migrate: true
-
+      port: 8000
+      seed: true
     seed:
       test:
         sources:
