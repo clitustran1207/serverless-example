@@ -10,9 +10,9 @@ custom:
       test:
         sources:
           - table: user
-            sources: [./models/seeds/user.json]
+            sources: [./db/dynamodb/seeds/user.json]
           - table: group
-            sources: [./models/seeds/groups.json]
+            sources: [./db/dynamodb/seeds/groups.json]
 
 provider:
   name: aws
