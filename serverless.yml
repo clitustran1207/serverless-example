@@ -5,6 +5,14 @@ custom:
     start:
       migrate: true
 
+    seed:
+      test:
+        sources:
+          - table: user
+            sources: [./models/seeds/user.json]
+          - table: group
+            sources: [./models/seeds/groups.json]
+
 provider:
   name: aws
   runtime: nodejs8.10

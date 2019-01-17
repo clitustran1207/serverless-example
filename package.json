@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec sls offline start",
+    "seed": "sls dynamodb seed --seed=test",
+    "start": "sls offline start --seed=test",
+    "dev": "nodemon --exec start:seed",
     "install-local-dynamodb": "sls dynamodb install",
     "uninstall-local-dynamodb": "sls dynamodb remove",
     "migrate-local-dynamodb": "sls dynamodb start --migrate",
