@@ -16,3 +16,4 @@
 * Set environment variable
   * MacOS: `export DYNAMO_ENDPOINT=http://localhost:8000`
   * Windows: `set DYNAMO_ENDPOINT=http://localhost:8000`
+  * Run `npm run serverless-dynamodb-local`
