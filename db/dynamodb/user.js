@@ -1,23 +1,16 @@
 const { dynamoDb } = require("./dynamodb");
 const TABLE_NAME = "user";
 
-const add = user => {
+const add = async user => {
   const params = {
     TableName: TABLE_NAME,
     Item: user
   };
-
-  return new Promise((resolve, reject) => {
-    dynamoDb.put(params, error => {
-      if (error) {
-        return reject(error);
-      }
-      resolve(user);
-    });
-  });
+  await dynamoDb.put(params).promise();
+  return user;
 };
 
-const get = id => {
+const get = async id => {
   const params = {
     TableName: TABLE_NAME,
     Key: {
@@ -25,22 +18,15 @@ const get = id => {
     }
   };
 
-  return new Promise((resolve, reject) => {
-    dynamoDb.get(params, (error, result) => {
-      console.log(error, result);
-      if (error) {
-        return reject(error);
-      }
-      if (result.Item) {
-        const { userId, name } = result.Item;
-        resolve({ userId, name });
-      } else {
-        const err = new Error("User not found");
-        err.statusCode = 404;
-        reject(err);
-      }
-    });
-  });
+  const result = await dynamoDb.get(params).promise();
+  if (result.Item) {
+    const { userId, name } = result.Item;
+    return { userId, name };
+  } else {
+    const err = new Error("User not found");
+    err.statusCode = 404;
+    throw err;
+  }
 };
 
 module.exports = {
